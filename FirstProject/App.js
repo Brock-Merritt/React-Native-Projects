@@ -6,7 +6,7 @@ const img = require('./assets/brule2.jpg')
 export default function App() {
   return (
     <View style={styles.container}>
-      <ImageBackground source={img}>
+      <ImageBackground source={img} style={{flex:1, resizeMode:"cover", JustifyContent:"center"}}> 
       <div>Hello</div>
       <StatusBar style="auto" />
       </ImageBackground>
@@ -17,8 +17,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+
   },
 });
