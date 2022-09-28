@@ -1,13 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 
+
+const img = require('./assets/brule2.jpg')
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hello</Text>
-      <Text>Hello</Text>
-      <Text>Hello</Text>
+      <ImageBackground source={img}>
+      <div>Hello</div>
       <StatusBar style="auto" />
+      </ImageBackground>
     </View>
   );
 }
