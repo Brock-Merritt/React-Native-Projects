@@ -6,7 +6,7 @@ const img = require('./assets/brule2.jpg')
 export default function App() {
   return (
     <View style={styles.container}>
-      <ImageBackground source={img} style={styles.image} > 
+      <ImageBackground source={img} style={styles.img} > 
       <div>Hello</div>
       <StatusBar style="auto" />
       </ImageBackground>
