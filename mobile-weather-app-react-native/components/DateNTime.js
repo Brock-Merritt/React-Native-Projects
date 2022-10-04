@@ -1,6 +1,15 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
+const Weather = ({title, value, unit}) => {
+    return(
+        <View>
+            <Text>{title}</Text>
+            <Text> {value}{unit}</Text>
+        </View>
+    )
+}
+
 const DateNTime = () => {
   return (
     <View>
@@ -12,7 +21,8 @@ const DateNTime = () => {
             <Text> place here</Text>
          </View>
          <View>
-
+            <Weather title="humidity" value="79" unit="%"/>
+            <Weather/>
          </View>
       </View>
       <View>
