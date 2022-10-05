@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text , StyleSheet } from 'react-native'
 
 const Weather = ({title, value, unit}) => {
     return(
@@ -12,17 +12,19 @@ const Weather = ({title, value, unit}) => {
 
 const DateNTime = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <View>
          <View>
-            <Text> time here</Text>
+            <Text style={styles.heading}> time here</Text>
          </View>
          <View>
             <Text> place here</Text>
          </View>
          <View>
             <Weather title="humidity" value="79" unit="%"/>
-            <Weather/>
+            <Weather title="Pressure" value="1000" unit="hPA"/>
+            <Weather title="Sunrise" value="7:00" unit="am"/>
+            <Weather title="Sunset" value="6:00" unit="pm"/>
          </View>
       </View>
       <View>
@@ -32,5 +34,16 @@ const DateNTime = () => {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+    container: {
+      flex:1.5,
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    },
+    heading: {
+      fontSize: 45,
+    }
+})
 
 export default DateNTime
