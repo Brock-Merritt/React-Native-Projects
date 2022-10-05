@@ -18,7 +18,7 @@ const DateNTime = () => {
             <Text style={styles.heading}> time here</Text>
          </View>
          <View>
-            <Text> place here</Text>
+            <Text style={styles.subheading}> date here</Text>
          </View>
          <View>
             <Weather title="humidity" value="79" unit="%"/>
@@ -27,9 +27,9 @@ const DateNTime = () => {
             <Weather title="Sunset" value="6:00" unit="pm"/>
          </View>
       </View>
-      <View>
-        <Text>location</Text>
-        <Text>lat/longitude</Text>
+      <View style={styles.rightAlign}>
+        <Text style={styles.timezone} >location</Text>
+        <Text style={styles.latlong >lat/longitude</Text>
       </View>
     </View>
   )
@@ -43,6 +43,26 @@ const styles = StyleSheet.create({
     },
     heading: {
       fontSize: 45,
+      color: 'white',
+      fontWeight: '100'
+
+    },
+    subheading: { 
+        fontSize: 25,
+        color: '#eee',
+        fontWeight: '300'
+    },
+    rightAlign: {
+      textAlign: 'right',
+    },
+    timezone: {
+      fontSize: 20,
+      color: 'white'
+    },
+    latlong:{
+      fontSize:16,
+      color: 'white',
+      fontWeight: '400,'
     }
 })
 
