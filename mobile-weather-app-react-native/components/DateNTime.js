@@ -3,7 +3,7 @@ import { View, Text , StyleSheet } from 'react-native'
 
 const Weather = ({title, value, unit}) => {
     return(
-        <View>
+        <View style={styles.weatherItem}>
             <Text>{title}</Text>
             <Text> {value}{unit}</Text>
         </View>
@@ -20,7 +20,7 @@ const DateNTime = () => {
          <View>
             <Text style={styles.subheading}> date here</Text>
          </View>
-         <View>
+         <View style={styles.WeatherItemContainer}>
             <Weather title="humidity" value="79" unit="%"/>
             <Weather title="Pressure" value="1000" unit="hPA"/>
             <Weather title="Sunrise" value="7:00" unit="am"/>
@@ -29,7 +29,7 @@ const DateNTime = () => {
       </View>
       <View style={styles.rightAlign}>
         <Text style={styles.timezone} >location</Text>
-        <Text style={styles.latlong >lat/longitude</Text>
+        <Text style={styles.latlong} >lat/longitude</Text>
       </View>
     </View>
   )
@@ -54,6 +54,7 @@ const styles = StyleSheet.create({
     },
     rightAlign: {
       textAlign: 'right',
+      marginTop: '20px',
     },
     timezone: {
       fontSize: 20,
@@ -62,7 +63,14 @@ const styles = StyleSheet.create({
     latlong:{
       fontSize:16,
       color: 'white',
-      fontWeight: '400,'
+      fontWeight: '700,'
+    },
+    WeatherItemContainer:{
+      backgroundColor: '#18181b99',
+      borderRadius: 10,
+      padding: 10,
+      marginTop : 10
+
     }
 })
 
