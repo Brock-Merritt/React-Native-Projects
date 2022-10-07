@@ -4,8 +4,8 @@ import { View, Text , StyleSheet } from 'react-native'
 const Weather = ({title, value, unit}) => {
     return(
         <View style={styles.weatherItem}>
-            <Text>{title}</Text>
-            <Text> {value}{unit}</Text>
+            <Text style={styles.weatherItemTitle} >{title}</Text>
+            <Text style={styles.weatherItemValue} > {value}{unit}</Text>
         </View>
     )
 }
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
       flex:1.5,
       flexDirection: 'row',
       justifyContent: 'space-between',
+      padding: 15
     },
     heading: {
       fontSize: 45,
@@ -71,7 +72,25 @@ const styles = StyleSheet.create({
       padding: 10,
       marginTop : 10
 
-    }
+    },
+    weatherItem:{
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+    
+    },
+    weatherItemTitle: {  
+      color: 'white',
+      fontSize: 14,
+      fontWeight: 100,
+      
+    },
+    weatherItemValue: {
+      color: 'white',
+      fontSize: 14,
+      fontWeight: 100,
+    },
+
+
 })
 
 export default DateNTime
