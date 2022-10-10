@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import DateNTime from './components/DateNTime';
+import WeatherScroll from './components/WeatherScroll';
 
 const img1 = require('./assets/Nice-Weather.jpg');
 export default function App() {
@@ -8,6 +9,7 @@ export default function App() {
     <View style={styles.container}>
       <ImageBackground source={img1} style={styles.image}>
       <DateNTime />
+      <WeatherScroll />
       </ImageBackground>
     </View>
   );
