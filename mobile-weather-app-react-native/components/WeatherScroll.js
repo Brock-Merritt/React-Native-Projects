@@ -3,7 +3,7 @@ import { View, ScrollView, Image, Text, StyleSheet } from 'react-native'
 
 const WeatherScroll = () => {
   return (
-    <ScrollView style={styles.ScrollView}>
+    <ScrollView horizontal={true} style={styles.ScrollView}>
         <CurrentTempEl></CurrentTempEl>
 
     </ScrollView>
@@ -46,6 +46,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderColor: 'white',
         borderWidth:1,
+        padding: 10
 
     },
     day:{
@@ -57,7 +58,18 @@ const styles = StyleSheet.create({
         borderRadius:50,
         fontWeight: 200,
         marginBottom:15
+    },
+    temp:{
+        fontSize:16,
+        color:'white',
+        fontWeight:100,
+        textAlign: 'center',
+    },
+    ForecastContainer:{
+        paddingRight: 40,
+
     }
+
 
 })
 export default WeatherScroll
