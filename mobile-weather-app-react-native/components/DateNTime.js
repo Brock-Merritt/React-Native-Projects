@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import { View, Text , StyleSheet } from 'react-native'
 
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
 const Weather = ({title, value, unit}) => {
     return(
         <View style={styles.weatherItem}>
@@ -26,9 +29,9 @@ const DateNTime = () => {
       const minutes = time.getMinutes();
       const ampm =  hour >= 12 ? 'PM' : 'AM'
 
-      timeEl.innerHTML = (hoursIn12HrFormat < 10? '0' + hoursIn12HrFormat : hoursIn12HrFormat) + ':' + (minutes < 10? '0' + minutes : minutes) + '' + `<span id=am-pm>${ampm}</span`
+      setTime((hoursIn12HrFormat < 10? '0' + hoursIn12HrFormat : hoursIn12HrFormat) + ':' + (minutes < 10? '0' + minutes : minutes) + '' + ampm)
 
-      dateEl.innerHTML = days[day] + ',' + date+ '' + months[month]
+      setDate(days[day] + ',' + date+ '' + months[month]) 
 
 
     }, 1000)
