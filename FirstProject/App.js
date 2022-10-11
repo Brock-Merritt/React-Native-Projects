@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
-import DateNTime from '../mobile-weather-app-react-native/components/DateNTime';
+
 
 const img = require('./assets/brule2.jpg')
 export default function App() {

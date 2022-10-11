@@ -29,7 +29,7 @@ const DateNTime = () => {
       const minutes = time.getMinutes();
       const ampm =  hour >= 12 ? 'PM' : 'AM'
 
-      setTime((hoursIn12HrFormat < 10? '0' + hoursIn12HrFormat : hoursIn12HrFormat) + ':' + (minutes < 10? '0' + minutes : minutes) + '' + ampm)
+      setTime((hoursIn12HrFormat < 10? '0' + hoursIn12HrFormat : hoursIn12HrFormat) + ':' + (minutes < 10? '0' + minutes : minutes) + '' +  ampm)
 
       setDate(days[day] + ',' + date+ '' + months[month]) 
 
@@ -40,10 +40,10 @@ const DateNTime = () => {
     <View style={styles.container}>
       <View>
          <View>
-            <Text style={styles.heading}> time here</Text>
+            <Text style={styles.heading}>{time}</Text>
          </View>
          <View>
-            <Text style={styles.subheading}> date here</Text>
+            <Text style={styles.subheading}>{date}</Text>
          </View>
          <View style={styles.WeatherItemContainer}>
             <Weather title="humidity" value="79" unit="%"/>
