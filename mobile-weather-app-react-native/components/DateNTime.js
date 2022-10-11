@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { View, Text , StyleSheet } from 'react-native'
 
 const Weather = ({title, value, unit}) => {
@@ -10,7 +10,29 @@ const Weather = ({title, value, unit}) => {
     )
 }
 
+
 const DateNTime = () => {
+  const [date, setDate] = useState('')
+  const [time, setTime] = useState('')
+
+  useEffect (() => {
+    setInterval(() => {
+      const time = new Date();
+      const month = time.getMonth();
+      const date = time.getDate();
+      const day = time.getDay();
+      const hour = time.getHours();
+      const hoursIn12HrFormat = hour >= 13 ? hour %12: hour
+      const minutes = time.getMinutes();
+      const ampm =  hour >= 12 ? 'PM' : 'AM'
+
+      timeEl.innerHTML = (hoursIn12HrFormat < 10? '0' + hoursIn12HrFormat : hoursIn12HrFormat) + ':' + (minutes < 10? '0' + minutes : minutes) + '' + `<span id=am-pm>${ampm}</span`
+
+      dateEl.innerHTML = days[day] + ',' + date+ '' + months[month]
+
+
+    }, 1000)
+  }, [])
   return (
     <View style={styles.container}>
       <View>

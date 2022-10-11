@@ -20,7 +20,6 @@ const FutureForecastItem = () => {
             <Image source={img} style={styles.image} />
             <Text style={styles.temp}>Night = cold</Text>
             <Text style={styles.temp}>day = warm</Text>
-
         </View>
 
 
