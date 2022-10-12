@@ -14,7 +14,7 @@ const Weather = ({title, value, unit}) => {
 }
 
 
-const DateNTime = () => {
+const DateNTime = ({current, lat, lon, timezone}) => {
   const [date, setDate] = useState('')
   const [time, setTime] = useState('')
 
@@ -53,8 +53,8 @@ const DateNTime = () => {
          </View>
       </View>
       <View style={styles.rightAlign}>
-        <Text style={styles.timezone} >location</Text>
-        <Text style={styles.latlong} >lat/longitude</Text>
+        <Text style={styles.timezone} >{timezone}</Text>
+        <Text style={styles.latlong} >{lat}N {lon}E</Text>
       </View>
     </View>
   )

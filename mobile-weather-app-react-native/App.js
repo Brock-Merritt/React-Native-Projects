@@ -28,13 +28,13 @@ export default function App() {
   const fetchData = (latitude,longitude) => {
     fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutes&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data =>{
       console.log(data);
-
+      setData(data);
     })
   }
   return (
     <View style={styles.container}>
       <ImageBackground source={img1} style={styles.image}>
-      <DateNTime />
+      <DateNTime current={data.current} timezone={data.timezone} lat={data.lat} lon={data.lon} />
       <WeatherScroll />
       </ImageBackground>
     </View>
