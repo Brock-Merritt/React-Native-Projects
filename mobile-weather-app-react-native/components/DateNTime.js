@@ -46,10 +46,10 @@ const DateNTime = ({current, lat, lon, timezone}) => {
             <Text style={styles.subheading}>{date}</Text>
          </View>
          <View style={styles.WeatherItemContainer}>
-            <Weather title="humidity" value="79" unit="%"/>
-            <Weather title="Pressure" value="1000" unit="hPA"/>
-            <Weather title="Sunrise" value="7:00" unit="am"/>
-            <Weather title="Sunset" value="6:00" unit="pm"/>
+            <Weather title="humidity" value={ current? current.humidity : ""} unit="%"/>
+            <Weather title="Pressure" value={current? current.pressure: ""} unit="hPA"/>
+            <Weather title="Sunrise" value={current?  current.sunrise: ""} unit="am"/>
+            <Weather title="Sunset" value={current? current.sunset: ""} unit="pm"/>
          </View>
       </View>
       <View style={styles.rightAlign}>
