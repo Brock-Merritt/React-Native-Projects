@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { View, Text , StyleSheet } from 'react-native'
+import moment from 'moment-timezone'
 
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -48,7 +49,7 @@ const DateNTime = ({current, lat, lon, timezone}) => {
          <View style={styles.WeatherItemContainer}>
             <Weather title="humidity" value={ current? current.humidity : ""} unit="%"/>
             <Weather title="Pressure" value={current? current.pressure: ""} unit="hPA"/>
-            <Weather title="Sunrise" value={current?  current.sunrise: ""} unit="am"/>
+            <Weather title="Sunrise" value={current?  moment.tz(current.sunrise, timezone).format('HH:mm'): ""} unit="am"/>
             <Weather title="Sunset" value={current? current.sunset: ""} unit="pm"/>
          </View>
       </View>
