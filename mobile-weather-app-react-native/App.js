@@ -35,7 +35,8 @@ export default function App() {
     <View style={styles.container}>
       <ImageBackground source={img1} style={styles.image}>
       <DateNTime current={data.current} timezone={data.timezone} lat={data.lat} lon={data.lon} />
-      <WeatherScroll />
+      <WeatherScroll  weatherData={data.daily}
+      />
       </ImageBackground>
     </View>
   );

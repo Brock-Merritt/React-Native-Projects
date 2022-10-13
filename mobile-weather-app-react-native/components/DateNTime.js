@@ -49,8 +49,8 @@ const DateNTime = ({current, lat, lon, timezone}) => {
          <View style={styles.WeatherItemContainer}>
             <Weather title="humidity" value={ current? current.humidity : ""} unit="%"/>
             <Weather title="Pressure" value={current? current.pressure: ""} unit="hPA"/>
-            <Weather title="Sunrise" value={current?  moment.tz(current.sunrise, timezone).format('HH:mm'): ""} unit="am"/>
-            <Weather title="Sunset" value={current? current.sunset: ""} unit="pm"/>
+            <Weather title="Sunrise" value={current?  moment.tz(current.sunrise * 1000, timezone).format('HH:mm'): ""} unit="am"/>
+            <Weather title="Sunset" value={current?  moment.tz(current.sunset * 1000, timezone).format('HH:mm'): ""} unit="pm"/>
          </View>
       </View>
       <View style={styles.rightAlign}>
