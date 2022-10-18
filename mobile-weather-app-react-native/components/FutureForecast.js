@@ -1,5 +1,6 @@
 import React from 'react'
 import { View, Text, Image, StyleSheet  } from 'react-native'
+import moment from 'moment-timezone'
 
 const FutureForecast = () => {
   return (
@@ -24,13 +25,13 @@ const FutureForecast = () => {
 }
 
 const FutureForecastItem = () => {  
-    const img = {uri: 'http://openweathermap.org/img/wn/'+FutureForecastItem.weather[0].icon+'@2x.png' }
+    const img = {uri: 'http://openweathermap.org/img/wn/'+forecastItem.weather[0].icon+'@2x.png' }
     return (
         <View style={styles.FutureForecastItemContainer}>
-            <Text style={styles.day}>{moment(data.dt * 1000).format('dddd')}</Text>
+            <Text style={styles.day}>{moment(forecastItem.dt * 1000).format('ddd')}</Text>
             <Image source={img} style={styles.image} />
-            <Text style={styles.temp}>Night = cold</Text>
-            <Text style={styles.temp}>day = warm</Text>
+            <Text style={styles.temp}>Night  {forecastItem.temp.night}</Text>
+            <Text style={styles.temp}>day {forecastItem.temp.day}</Text>
         </View>
 
 
