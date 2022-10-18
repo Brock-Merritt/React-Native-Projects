@@ -10,7 +10,7 @@ const FutureForecast = ({data}) => {
             data && data.length > 0 ? 
             data.map((data, idx) => (
                 
-                idx !== 0 &&   <FutureForecastItem FutureForecastItem={data}/>
+                idx !== 0 &&   <FutureForecastItem forecastItem={data}/>
                 
             ))
 
@@ -24,10 +24,10 @@ const FutureForecast = ({data}) => {
   )
 }
 
-const FutureForecastItem = () => {  
+const FutureForecastItem = (forecastItem) => {  
     const img = {uri: 'http://openweathermap.org/img/wn/'+forecastItem.weather[0].icon+'@2x.png' }
     return (
-        <View style={styles.FutureForecastItemContainer}>
+        <View style={styles.futureForecastItemContainer}>
             <Text style={styles.day}>{moment(forecastItem.dt * 1000).format('ddd')}</Text>
             <Image source={img} style={styles.image} />
             <Text style={styles.temp}>Night  {forecastItem.temp.night}</Text>
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         width:100,
         height:100
     },
-    FutureForecastItemContainer: {  
+    futureForecastItemContainer: {  
         flex:1,
         justifyContent: 'center',
         backgroundColor: '#00000033',
