@@ -6,7 +6,7 @@ import moment from 'moment-timezone'
 const WeatherScroll = ({weatherData}) => {
   return (
     <ScrollView horizontal={true} style={styles.ScrollView}>
-        <CurrentTempEl data={weatherData && weatherData.length > 0 ? weatherData[0] : {}}/>
+        <CurrentTempEl  data= {weatherData? weatherData[0] : {}}/>
         <FutureForecast/>
 
     </ScrollView>

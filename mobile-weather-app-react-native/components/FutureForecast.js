@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, Image, StyleSheet  } from 'react-native'
 import moment from 'moment-timezone'
 
-const FutureForecast = () => {
+const FutureForecast = ({data}) => {
   return (
     <View style={{flexDirection:'row'}}>
 
@@ -16,7 +16,7 @@ const FutureForecast = () => {
 
             :
             <View/>
-        }
+        } 
         
         
 
